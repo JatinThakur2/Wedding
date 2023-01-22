@@ -31,9 +31,7 @@
   font: optional;
   font-family: "Comic Sans MS";
 }
-.page{
-  height: 1000;
-}
+
 .button{
   background-color: bisque;
   color: white;
