@@ -11,30 +11,36 @@ function App() {
     setPageNumber(1);
   }
 
+  function changePage(offSet){
+    setPageNumber(prevPageNumber => prevPageNumber + offSet);
+  }
 
+  function changePageBack(){
+    changePage(-1)
+  }
+
+  function changePageNext(){
+    changePage(+1)
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-          <Page height="600" pageNumber={pageNumber} />
+          <Page height="700" pageNumber={pageNumber} />
         </Document>
-        <p> </p>
-       
+        <p className='p'> Page {pageNumber} of {numPages}</p>
+        { pageNumber > 1 && 
+        <button className='button' onClick={changePageBack}>Previous</button>
+        }
+        {
+          pageNumber < numPages &&
+          <button className='button' onClick={changePageNext}>Next</button>
+        }
       </header>
       <center>
         <div>
-          <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-            {Array.from(
-              new Array(numPages),
-              (el,index) => (
-                <Page 
-                  key={`page_${index+1}`}
-                  pageNumber={index+1}
-                />
-              )
-            )}
-          </Document>
+         
         </div>
       </center>
     </div>

@@ -27,6 +27,25 @@
 .App-link {
   color: #61dafb;
 }
+.p{
+  font: optional;
+  font-family: "Comic Sans MS";
+}
+.page{
+  height: 1000;
+}
+.button{
+  background-color: bisque;
+  color: white;
+  -webkit-text-stroke: 1px rgb(137, 128, 117); 
+  font-family: "Comic Sans MS";
+  border: #282c34;
+  font-size: medium;
+  border-radius: 10px;
+  width: 120px;
+  font-weight: bold;
+  height: 60px;
+}
 
 @keyframes App-logo-spin {
   from {
